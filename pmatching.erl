@@ -5,7 +5,6 @@
 %Shapes
 %Define a function which takes a shape and returns the perimeter of the shape.
 
-
 perimeter({R}) -> 
 	
 	2*R*3.1416; 
@@ -16,7 +15,7 @@ perimeter({H,W})->
 
 perimeter({A,B,C})-> 
 	
-	A+ B+C.
+	A+B+C.
 
 %Choose a suitable representation of triangles, and augment area/1 and perimeter/1 to handle this case too.
 
@@ -46,4 +45,9 @@ enclose	({A,B,C}) when (B > C) and (C < A) ->
 
 enclose	({A,B,C}) when (B < C) and (C > A) ->
 
-	{B,A}.
+	{B,A};
+
+enclose ({A,B,C}) when (A == B) and (B == C) ->
+
+	{A,B}.
+
