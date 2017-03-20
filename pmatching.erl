@@ -1,6 +1,6 @@
 -module(pmatching).
 
--export([perimeter/1,area/1,enclose/1]).
+-export([perimeter/1,area/1,enclose/1,bits/1]).
 
 %Shapes
 %Define a function which takes a shape and returns the perimeter of the shape.
@@ -51,3 +51,22 @@ enclose ({A,B,C}) when (A == B) and (B == C) ->
 
 	{A,B}.
 
+%Summing the bits
+%Define a function bits/1 that takes a positive integer N and returns the sum of the bits in the binary representation.
+%For example bits(7) is 3 and bits(8) is 1.
+
+bits(N) -> 
+    
+    bits(N,0).
+
+bits(N,Acc) when (N < 1) ->
+	
+	Acc;
+
+bits(N, Acc) when (N rem 2 =:= 1) -> 
+	
+	bits(trunc(N/2), Acc + 1); 
+
+bits(N, Acc) when (N rem 2 =:= 0) -> 
+	
+	bits(trunc(N/2), Acc).      
