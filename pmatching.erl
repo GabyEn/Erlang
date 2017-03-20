@@ -12,15 +12,11 @@ perimeter({R}) ->
 
 perimeter({H,W})-> 
 	
-	2*H+2*W; 
+	2*(W+H); 
 
 perimeter({A,B,C})-> 
 	
-	A+ B+C;
-
-perimeter(L) ->
-
-	L*4.
+	A+ B+C.
 
 %Choose a suitable representation of triangles, and augment area/1 and perimeter/1 to handle this case too.
 
@@ -31,10 +27,6 @@ area({A,B,C}) ->
 	math:sqrt(P * (P - A) * (P - B) * (P - C)).
 
 %Define a function enclose/1 that takes a shape an returns the smallest enclosing rectangle of the shape. 
-
-enclose({H,W}) ->
-
-	{H,W};
 
 enclose	({A,B,C}) when (A < B) and (B < C) ->
 

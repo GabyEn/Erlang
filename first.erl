@@ -16,8 +16,3 @@ square(X) ->
 
 treble(X) ->
   mult(3, X).
-
-square_test() ->
-  ?assertEqual(1, first:square(1)),
-  ?assertEqual(4, first:square(2)),
-  ?assertEqual(9, first:square(3)).
